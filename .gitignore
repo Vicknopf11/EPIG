@@ -14,3 +14,12 @@ previews_200/
 
 # logs
 *.csv
+
+# secrets / session state
+justice_storage.json
+justice_storage*.json
+
+# debug artifacts
+dataset1_debug.html
+*_debug.html
+*.log
