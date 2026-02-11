@@ -1,0 +1,16 @@
+# virtualenv
+.venv/
+
+# downloaded data
+downloads_dataset1/
+previews_200/
+
+# large outputs
+*.png
+*.pdf
+
+# macOS
+.DS_Store
+
+# logs
+*.csv
