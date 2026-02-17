@@ -1,0 +1,54 @@
+dataset_id: "dataset1"
+
+paths:
+  input_dir: "/Users/ferrucciobottoni/Desktop/EPICOSO/raw/dataset1"
+  db_path: "/Users/ferrucciobottoni/Desktop/EPICOSO/db/epig_dataset1.duckdb"
+  images_dir: "/Users/ferrucciobottoni/Desktop/EPICOSO/work/images_dataset1"
+
+naming:
+  efta_regex: "EFTA(\\d{8})"
+
+seed_assignments:
+  # Regola: prima matcha location, poi shoot (se presente)
+  - location: "NY_9E71st"
+    shoots:
+      - shoot_index: 1
+        efta_start: 1
+        efta_end: 836
+        confidence: 0.95
+      - shoot_index: 2
+        efta_start: 837
+        efta_end: 1499
+        confidence: 0.95
+
+  - location: "LSJ"
+    shoots:
+      - shoot_index: null
+        efta_start: 1500
+        efta_end: 99999999
+        confidence: 0.80
+
+ocr:
+  enabled: true
+
+  slate:
+    roi: "slate"
+    psm: 6
+    keywords: ["DATE", "CASE ID", "PHOTOGRAPHER", "LOCATION", "FBI"]
+    min_keywords: 3
+    strong_keywords: ["DATE", "LOCATION"]
+
+  room_marker:
+    roi: "multi"
+    psm: 8
+    whitelist: "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    regex: "^([A-Z])$|^([A-Z])\\2$"
+
+render:
+  zoom: 2.0
+  jpg_quality: 92
+
+features:
+  compute_phash: true
+  compute_luma: true
+  compute_blur: true

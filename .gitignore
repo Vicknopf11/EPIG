@@ -18,6 +18,7 @@ previews_200/
 
 # logs
 *.csv
+outputs/
 
 # secrets / session state
 justice_storage.json
