@@ -1,5 +1,9 @@
 # virtualenv
 .venv/
+raw/
+work/
+db/
+*.duckdb
 
 # downloaded data
 downloads_dataset1/
@@ -23,3 +27,7 @@ justice_storage*.json
 dataset1_debug.html
 *_debug.html
 *.log
+
+# Python
+__pycache__/
+*.pyc
